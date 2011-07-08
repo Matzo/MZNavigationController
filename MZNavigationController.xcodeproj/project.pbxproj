@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F705EEC513C77AF600CF0882 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A55113C775D700803C9D /* TestViewController.m */; };
+		F705EEC613C77AF600CF0882 /* TestWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A55313C775D700803C9D /* TestWebViewController.m */; };
+		F705F34113C77B6800CF0882 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F705F16113C77B6700CF0882 /* MainWindow.xib */; };
+		F705F35113C77B6800CF0882 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F705F18213C77B6700CF0882 /* InfoPlist.strings */; };
+		F705F35213C77B6800CF0882 /* MZNavigationControllerTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F705F18413C77B6700CF0882 /* MZNavigationControllerTests-Info.plist */; };
+		F705F35E13C77DDA00CF0882 /* MZNavigationBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A56A13C776B600803C9D /* MZNavigationBaseView.m */; };
+		F705F36013C77DDA00CF0882 /* MZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A56C13C776B600803C9D /* MZNavigationController.m */; };
+		F705F36213C77DDA00CF0882 /* MZNavigationScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A56E13C776B600803C9D /* MZNavigationScrollView.m */; };
+		F705F36413C77DF300CF0882 /* MZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A57913C776C600803C9D /* MZTabBarController.m */; };
+		F705F36813C77DF300CF0882 /* MZBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A57713C776C600803C9D /* MZBadgeView.m */; };
+		F705F36E13C77E4900CF0882 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A53D13C775D700803C9D /* 2.png */; };
+		F705F36F13C77E5400CF0882 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A53B13C775D700803C9D /* 0.png */; };
+		F718A55513C775D700803C9D /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A53C13C775D700803C9D /* 1.png */; };
+		F718A55713C775D700803C9D /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A53E13C775D700803C9D /* 3.png */; };
+		F718A55813C775D700803C9D /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A53F13C775D700803C9D /* 4.png */; };
+		F718A55913C775D700803C9D /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A54013C775D700803C9D /* 5.png */; };
+		F718A55A13C775D700803C9D /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A54113C775D700803C9D /* 6.png */; };
+		F718A55B13C775D700803C9D /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A54213C775D700803C9D /* 7.png */; };
+		F718A55C13C775D700803C9D /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A54313C775D700803C9D /* 8.png */; };
+		F718A55D13C775D700803C9D /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A54413C775D700803C9D /* 9.png */; };
+		F718A55E13C775D700803C9D /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A54513C775D700803C9D /* 10.png */; };
+		F718A55F13C775D700803C9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F718A54713C775D700803C9D /* InfoPlist.strings */; };
+		F718A56113C775D700803C9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A54B13C775D700803C9D /* main.m */; };
+		F718A56313C775D700803C9D /* MZNavigationControllerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A54F13C775D700803C9D /* MZNavigationControllerAppDelegate.m */; };
+		F718A57313C776B600803C9D /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A56F13C776B600803C9D /* shadow.png */; };
+		F718A57E13C776C600803C9D /* badge.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A57413C776C600803C9D /* badge.png */; };
+		F718A57F13C776C600803C9D /* badge@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A57513C776C600803C9D /* badge@x2.png */; };
+		F718A58213C776C600803C9D /* MZTabMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A57B13C776C600803C9D /* MZTabMenuCell.m */; };
+		F718A58313C776C600803C9D /* MZTabMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A57D13C776C600803C9D /* MZTabMenuView.m */; };
+		F7720423137C21B7006D4EF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7720422137C21B7006D4EF1 /* UIKit.framework */; };
+		F7720425137C21B7006D4EF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7720424137C21B7006D4EF1 /* Foundation.framework */; };
+		F7720427137C21B7006D4EF1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7720426137C21B7006D4EF1 /* CoreGraphics.framework */; };
+		F7720443137C21B8006D4EF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7720422137C21B7006D4EF1 /* UIKit.framework */; };
+		F7720444137C21B8006D4EF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7720424137C21B7006D4EF1 /* Foundation.framework */; };
+		F7720445137C21B8006D4EF1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7720426137C21B7006D4EF1 /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7720446137C21B8006D4EF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7720415137C21B7006D4EF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F772041D137C21B7006D4EF1;
+			remoteInfo = MZNavigationController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F705F16213C77B6700CF0882 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		F705F18313C77B6700CF0882 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F705F18413C77B6700CF0882 /* MZNavigationControllerTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MZNavigationControllerTests-Info.plist"; sourceTree = "<group>"; };
+		F705F18513C77B6700CF0882 /* MZNavigationControllerTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MZNavigationControllerTests-Prefix.pch"; sourceTree = "<group>"; };
+		F718A53B13C775D700803C9D /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 0.png; path = MZNavigationController/0.png; sourceTree = SOURCE_ROOT; };
+		F718A53C13C775D700803C9D /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = MZNavigationController/1.png; sourceTree = SOURCE_ROOT; };
+		F718A53D13C775D700803C9D /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = MZNavigationController/2.png; sourceTree = SOURCE_ROOT; };
+		F718A53E13C775D700803C9D /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = MZNavigationController/3.png; sourceTree = SOURCE_ROOT; };
+		F718A53F13C775D700803C9D /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = MZNavigationController/4.png; sourceTree = SOURCE_ROOT; };
+		F718A54013C775D700803C9D /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = MZNavigationController/5.png; sourceTree = SOURCE_ROOT; };
+		F718A54113C775D700803C9D /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6.png; path = MZNavigationController/6.png; sourceTree = SOURCE_ROOT; };
+		F718A54213C775D700803C9D /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 7.png; path = MZNavigationController/7.png; sourceTree = SOURCE_ROOT; };
+		F718A54313C775D700803C9D /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8.png; path = MZNavigationController/8.png; sourceTree = SOURCE_ROOT; };
+		F718A54413C775D700803C9D /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9.png; path = MZNavigationController/9.png; sourceTree = SOURCE_ROOT; };
+		F718A54513C775D700803C9D /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 10.png; path = MZNavigationController/10.png; sourceTree = SOURCE_ROOT; };
+		F718A54B13C775D700803C9D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MZNavigationController/main.m; sourceTree = SOURCE_ROOT; };
+		F718A54D13C775D700803C9D /* MZNavigationController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MZNavigationController-Prefix.pch"; path = "MZNavigationController/MZNavigationController-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		F718A54E13C775D700803C9D /* MZNavigationControllerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZNavigationControllerAppDelegate.h; path = MZNavigationController/MZNavigationControllerAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		F718A54F13C775D700803C9D /* MZNavigationControllerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZNavigationControllerAppDelegate.m; path = MZNavigationController/MZNavigationControllerAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		F718A55013C775D700803C9D /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = MZNavigationController/TestViewController.h; sourceTree = SOURCE_ROOT; };
+		F718A55113C775D700803C9D /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = MZNavigationController/TestViewController.m; sourceTree = SOURCE_ROOT; };
+		F718A55213C775D700803C9D /* TestWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestWebViewController.h; path = MZNavigationController/TestWebViewController.h; sourceTree = SOURCE_ROOT; };
+		F718A55313C775D700803C9D /* TestWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestWebViewController.m; path = MZNavigationController/TestWebViewController.m; sourceTree = SOURCE_ROOT; };
+		F718A56713C7766B00803C9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MZNavigationController/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		F718A56913C776B600803C9D /* MZNavigationBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZNavigationBaseView.h; path = MZNavigationControllerModule/MZNavigationBaseView.h; sourceTree = SOURCE_ROOT; };
+		F718A56A13C776B600803C9D /* MZNavigationBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZNavigationBaseView.m; path = MZNavigationControllerModule/MZNavigationBaseView.m; sourceTree = SOURCE_ROOT; };
+		F718A56B13C776B600803C9D /* MZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZNavigationController.h; path = MZNavigationControllerModule/MZNavigationController.h; sourceTree = SOURCE_ROOT; };
+		F718A56C13C776B600803C9D /* MZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZNavigationController.m; path = MZNavigationControllerModule/MZNavigationController.m; sourceTree = SOURCE_ROOT; };
+		F718A56D13C776B600803C9D /* MZNavigationScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZNavigationScrollView.h; path = MZNavigationControllerModule/MZNavigationScrollView.h; sourceTree = SOURCE_ROOT; };
+		F718A56E13C776B600803C9D /* MZNavigationScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZNavigationScrollView.m; path = MZNavigationControllerModule/MZNavigationScrollView.m; sourceTree = SOURCE_ROOT; };
+		F718A56F13C776B600803C9D /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shadow.png; path = MZNavigationControllerModule/shadow.png; sourceTree = SOURCE_ROOT; };
+		F718A57413C776C600803C9D /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badge.png; path = MZNavigationControllerModule/badge.png; sourceTree = SOURCE_ROOT; };
+		F718A57513C776C600803C9D /* badge@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "badge@x2.png"; path = "MZNavigationControllerModule/badge@x2.png"; sourceTree = SOURCE_ROOT; };
+		F718A57613C776C600803C9D /* MZBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZBadgeView.h; path = MZNavigationControllerModule/MZBadgeView.h; sourceTree = SOURCE_ROOT; };
+		F718A57713C776C600803C9D /* MZBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZBadgeView.m; path = MZNavigationControllerModule/MZBadgeView.m; sourceTree = SOURCE_ROOT; };
+		F718A57813C776C600803C9D /* MZTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZTabBarController.h; path = MZNavigationControllerModule/MZTabBarController.h; sourceTree = SOURCE_ROOT; };
+		F718A57913C776C600803C9D /* MZTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZTabBarController.m; path = MZNavigationControllerModule/MZTabBarController.m; sourceTree = SOURCE_ROOT; };
+		F718A57A13C776C600803C9D /* MZTabMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZTabMenuCell.h; path = MZNavigationControllerModule/MZTabMenuCell.h; sourceTree = SOURCE_ROOT; };
+		F718A57B13C776C600803C9D /* MZTabMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZTabMenuCell.m; path = MZNavigationControllerModule/MZTabMenuCell.m; sourceTree = SOURCE_ROOT; };
+		F718A57C13C776C600803C9D /* MZTabMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZTabMenuView.h; path = MZNavigationControllerModule/MZTabMenuView.h; sourceTree = SOURCE_ROOT; };
+		F718A57D13C776C600803C9D /* MZTabMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZTabMenuView.m; path = MZNavigationControllerModule/MZTabMenuView.m; sourceTree = SOURCE_ROOT; };
+		F718A58E13C7792B00803C9D /* MZNavigationController-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MZNavigationController-Info.plist"; path = "MZNavigationController/MZNavigationController-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F772041E137C21B7006D4EF1 /* MZNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7720422137C21B7006D4EF1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F7720424137C21B7006D4EF1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F7720426137C21B7006D4EF1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F7720442137C21B8006D4EF1 /* MZNavigationControllerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MZNavigationControllerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F772041B137C21B7006D4EF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7720423137C21B7006D4EF1 /* UIKit.framework in Frameworks */,
+				F7720425137C21B7006D4EF1 /* Foundation.framework in Frameworks */,
+				F7720427137C21B7006D4EF1 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F772043E137C21B7006D4EF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7720443137C21B8006D4EF1 /* UIKit.framework in Frameworks */,
+				F7720444137C21B8006D4EF1 /* Foundation.framework in Frameworks */,
+				F7720445137C21B8006D4EF1 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F720ED8513893131005E275B /* MZTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F718A57813C776C600803C9D /* MZTabBarController.h */,
+				F718A57913C776C600803C9D /* MZTabBarController.m */,
+				F718A57C13C776C600803C9D /* MZTabMenuView.h */,
+				F718A57D13C776C600803C9D /* MZTabMenuView.m */,
+				F718A57A13C776C600803C9D /* MZTabMenuCell.h */,
+				F718A57B13C776C600803C9D /* MZTabMenuCell.m */,
+				F718A57613C776C600803C9D /* MZBadgeView.h */,
+				F718A57713C776C600803C9D /* MZBadgeView.m */,
+				F718A57413C776C600803C9D /* badge.png */,
+				F718A57513C776C600803C9D /* badge@x2.png */,
+			);
+			name = MZTabBarController;
+			sourceTree = "<group>";
+		};
+		F720ED8613893147005E275B /* MZNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				F718A56913C776B600803C9D /* MZNavigationBaseView.h */,
+				F718A56A13C776B600803C9D /* MZNavigationBaseView.m */,
+				F718A56B13C776B600803C9D /* MZNavigationController.h */,
+				F718A56C13C776B600803C9D /* MZNavigationController.m */,
+				F718A56D13C776B600803C9D /* MZNavigationScrollView.h */,
+				F718A56E13C776B600803C9D /* MZNavigationScrollView.m */,
+				F718A56F13C776B600803C9D /* shadow.png */,
+			);
+			name = MZNavigationController;
+			sourceTree = "<group>";
+		};
+		F7720413137C21B7006D4EF1 = {
+			isa = PBXGroup;
+			children = (
+				F7720428137C21B7006D4EF1 /* MZNavigationController */,
+				F7720448137C21B8006D4EF1 /* MZNavigationControllerTests */,
+				F7720421137C21B7006D4EF1 /* Frameworks */,
+				F772041F137C21B7006D4EF1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F772041F137C21B7006D4EF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F772041E137C21B7006D4EF1 /* MZNavigationController.app */,
+				F7720442137C21B8006D4EF1 /* MZNavigationControllerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7720421137C21B7006D4EF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7720422137C21B7006D4EF1 /* UIKit.framework */,
+				F7720424137C21B7006D4EF1 /* Foundation.framework */,
+				F7720426137C21B7006D4EF1 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7720428137C21B7006D4EF1 /* MZNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				F718A54E13C775D700803C9D /* MZNavigationControllerAppDelegate.h */,
+				F718A54F13C775D700803C9D /* MZNavigationControllerAppDelegate.m */,
+				F705F16113C77B6700CF0882 /* MainWindow.xib */,
+				F7F9B13D139BA2A2009D17A9 /* KitchenSink */,
+				F7720429137C21B7006D4EF1 /* Supporting Files */,
+				F720ED8613893147005E275B /* MZNavigationController */,
+				F720ED8513893131005E275B /* MZTabBarController */,
+			);
+			path = MZNavigationController;
+			sourceTree = "<group>";
+		};
+		F7720429137C21B7006D4EF1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F718A58E13C7792B00803C9D /* MZNavigationController-Info.plist */,
+				F718A54D13C775D700803C9D /* MZNavigationController-Prefix.pch */,
+				F718A54B13C775D700803C9D /* main.m */,
+				F718A54713C775D700803C9D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7720448137C21B8006D4EF1 /* MZNavigationControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7720449137C21B8006D4EF1 /* Supporting Files */,
+			);
+			path = MZNavigationControllerTests;
+			sourceTree = "<group>";
+		};
+		F7720449137C21B8006D4EF1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F705F18213C77B6700CF0882 /* InfoPlist.strings */,
+				F705F18413C77B6700CF0882 /* MZNavigationControllerTests-Info.plist */,
+				F705F18513C77B6700CF0882 /* MZNavigationControllerTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7F9B13D139BA2A2009D17A9 /* KitchenSink */ = {
+			isa = PBXGroup;
+			children = (
+				F718A53B13C775D700803C9D /* 0.png */,
+				F718A53C13C775D700803C9D /* 1.png */,
+				F718A53D13C775D700803C9D /* 2.png */,
+				F718A53E13C775D700803C9D /* 3.png */,
+				F718A53F13C775D700803C9D /* 4.png */,
+				F718A54013C775D700803C9D /* 5.png */,
+				F718A54113C775D700803C9D /* 6.png */,
+				F718A54213C775D700803C9D /* 7.png */,
+				F718A54313C775D700803C9D /* 8.png */,
+				F718A54413C775D700803C9D /* 9.png */,
+				F718A54513C775D700803C9D /* 10.png */,
+				F718A55013C775D700803C9D /* TestViewController.h */,
+				F718A55113C775D700803C9D /* TestViewController.m */,
+				F718A55213C775D700803C9D /* TestWebViewController.h */,
+				F718A55313C775D700803C9D /* TestWebViewController.m */,
+			);
+			name = KitchenSink;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F772041D137C21B7006D4EF1 /* MZNavigationController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7720455137C21B8006D4EF1 /* Build configuration list for PBXNativeTarget "MZNavigationController" */;
+			buildPhases = (
+				F772041A137C21B7006D4EF1 /* Sources */,
+				F772041B137C21B7006D4EF1 /* Frameworks */,
+				F772041C137C21B7006D4EF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MZNavigationController;
+			productName = MZNavigationController;
+			productReference = F772041E137C21B7006D4EF1 /* MZNavigationController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7720441137C21B7006D4EF1 /* MZNavigationControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7720458137C21B8006D4EF1 /* Build configuration list for PBXNativeTarget "MZNavigationControllerTests" */;
+			buildPhases = (
+				F772043D137C21B7006D4EF1 /* Sources */,
+				F772043E137C21B7006D4EF1 /* Frameworks */,
+				F772043F137C21B7006D4EF1 /* Resources */,
+				F7720440137C21B7006D4EF1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7720447137C21B8006D4EF1 /* PBXTargetDependency */,
+			);
+			name = MZNavigationControllerTests;
+			productName = MZNavigationControllerTests;
+			productReference = F7720442137C21B8006D4EF1 /* MZNavigationControllerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7720415137C21B7006D4EF1 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = F7720418137C21B7006D4EF1 /* Build configuration list for PBXProject "MZNavigationController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F7720413137C21B7006D4EF1;
+			productRefGroup = F772041F137C21B7006D4EF1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F772041D137C21B7006D4EF1 /* MZNavigationController */,
+				F7720441137C21B7006D4EF1 /* MZNavigationControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F772041C137C21B7006D4EF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F718A55513C775D700803C9D /* 1.png in Resources */,
+				F718A55713C775D700803C9D /* 3.png in Resources */,
+				F718A55813C775D700803C9D /* 4.png in Resources */,
+				F718A55913C775D700803C9D /* 5.png in Resources */,
+				F718A55A13C775D700803C9D /* 6.png in Resources */,
+				F718A55B13C775D700803C9D /* 7.png in Resources */,
+				F718A55C13C775D700803C9D /* 8.png in Resources */,
+				F718A55D13C775D700803C9D /* 9.png in Resources */,
+				F718A55E13C775D700803C9D /* 10.png in Resources */,
+				F718A55F13C775D700803C9D /* InfoPlist.strings in Resources */,
+				F718A57313C776B600803C9D /* shadow.png in Resources */,
+				F718A57E13C776C600803C9D /* badge.png in Resources */,
+				F718A57F13C776C600803C9D /* badge@x2.png in Resources */,
+				F705F34113C77B6800CF0882 /* MainWindow.xib in Resources */,
+				F705F35113C77B6800CF0882 /* InfoPlist.strings in Resources */,
+				F705F35213C77B6800CF0882 /* MZNavigationControllerTests-Info.plist in Resources */,
+				F705F36E13C77E4900CF0882 /* 2.png in Resources */,
+				F705F36F13C77E5400CF0882 /* 0.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F772043F137C21B7006D4EF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F7720440137C21B7006D4EF1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F772041A137C21B7006D4EF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F705F36413C77DF300CF0882 /* MZTabBarController.m in Sources */,
+				F705F36813C77DF300CF0882 /* MZBadgeView.m in Sources */,
+				F705F35E13C77DDA00CF0882 /* MZNavigationBaseView.m in Sources */,
+				F705F36013C77DDA00CF0882 /* MZNavigationController.m in Sources */,
+				F705F36213C77DDA00CF0882 /* MZNavigationScrollView.m in Sources */,
+				F718A56113C775D700803C9D /* main.m in Sources */,
+				F718A56313C775D700803C9D /* MZNavigationControllerAppDelegate.m in Sources */,
+				F718A58213C776C600803C9D /* MZTabMenuCell.m in Sources */,
+				F718A58313C776C600803C9D /* MZTabMenuView.m in Sources */,
+				F705EEC513C77AF600CF0882 /* TestViewController.m in Sources */,
+				F705EEC613C77AF600CF0882 /* TestWebViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F772043D137C21B7006D4EF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7720447137C21B8006D4EF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F772041D137C21B7006D4EF1 /* MZNavigationController */;
+			targetProxy = F7720446137C21B8006D4EF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F705F16113C77B6700CF0882 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F705F16213C77B6700CF0882 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		F705F18213C77B6700CF0882 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F705F18313C77B6700CF0882 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F718A54713C775D700803C9D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F718A56713C7766B00803C9D /* en */,
+			);
+			name = InfoPlist.strings;
+			path = MZNavigationController;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7720453137C21B8006D4EF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: keisuke matsuo (6496U2E57C)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "57012E29-2D53-4B2D-A893-94C4870D6271";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		F7720454137C21B8006D4EF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: keisuke matsuo (6496U2E57C)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "57012E29-2D53-4B2D-A893-94C4870D6271";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		F7720456137C21B8006D4EF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MZNavigationController/MZNavigationController-Prefix.pch";
+				INFOPLIST_FILE = "MZNavigationController/MZNavigationController-Info.plist";
+				PRODUCT_NAME = MZNavigationController;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F7720457137C21B8006D4EF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MZNavigationController/MZNavigationController-Prefix.pch";
+				INFOPLIST_FILE = "MZNavigationController/MZNavigationController-Info.plist";
+				PRODUCT_NAME = MZNavigationController;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F7720459137C21B8006D4EF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MZNavigationController.app/MZNavigationController";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MZNavigationControllerTests/MZNavigationControllerTests-Prefix.pch";
+				INFOPLIST_FILE = "MZNavigationControllerTests/MZNavigationControllerTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = MZNavigationControllerTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F772045A137C21B8006D4EF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MZNavigationController.app/MZNavigationController";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MZNavigationControllerTests/MZNavigationControllerTests-Prefix.pch";
+				INFOPLIST_FILE = "MZNavigationControllerTests/MZNavigationControllerTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = MZNavigationControllerTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7720418137C21B7006D4EF1 /* Build configuration list for PBXProject "MZNavigationController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7720453137C21B8006D4EF1 /* Debug */,
+				F7720454137C21B8006D4EF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7720455137C21B8006D4EF1 /* Build configuration list for PBXNativeTarget "MZNavigationController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7720456137C21B8006D4EF1 /* Debug */,
+				F7720457137C21B8006D4EF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7720458137C21B8006D4EF1 /* Build configuration list for PBXNativeTarget "MZNavigationControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7720459137C21B8006D4EF1 /* Debug */,
+				F772045A137C21B8006D4EF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7720415137C21B7006D4EF1 /* Project object */;
+}
