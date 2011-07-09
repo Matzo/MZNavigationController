@@ -3,7 +3,7 @@
 //  MZNavigationScrollView
 //
 //  Created by Keisuke Matsuo on 11/05/16.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Keisuke Matsuo. All rights reserved.
 //
 
 #import "MZNavigationScrollView.h"
