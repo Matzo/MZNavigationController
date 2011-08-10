@@ -317,6 +317,7 @@
     } else {
         [self layoutRelationalViews];
     }
+//    [self scrollToPagingOffset];
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self layoutRelationalViews];
@@ -325,6 +326,11 @@
 }
 
 - (void)scrollToPagingOffset {
+//    [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x,
+//                                                  self.scrollView.contentOffset.y)
+//                             animated:NO];
+
+    
     NSArray *indexes = [self pageOffsetIndexes];
     float targetStart = [[indexes objectAtIndex:0] floatValue];
     float targetEnd;

@@ -24,6 +24,7 @@
         
         lastTouchPoint = CGPointZero;
         
+        self.scrollsToTop = NO;
         self.showsVerticalScrollIndicator = NO;
         self.showsHorizontalScrollIndicator = NO;
     }
