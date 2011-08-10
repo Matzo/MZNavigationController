@@ -36,7 +36,12 @@
 		F718A57F13C776C600803C9D /* badge@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = F718A57513C776C600803C9D /* badge@x2.png */; };
 		F718A58213C776C600803C9D /* MZTabMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A57B13C776C600803C9D /* MZTabMenuCell.m */; };
 		F718A58313C776C600803C9D /* MZTabMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A57D13C776C600803C9D /* MZTabMenuView.m */; };
+<<<<<<< HEAD
 		F72F6D7F13F2C7DD00C16E74 /* README in Resources */ = {isa = PBXBuildFile; fileRef = F72F6D7E13F2C7DD00C16E74 /* README */; };
+=======
+		F731185413C84FEC00001E18 /* COPYRIGHT in Resources */ = {isa = PBXBuildFile; fileRef = F731185213C84FEB00001E18 /* COPYRIGHT */; };
+		F731185513C84FEC00001E18 /* README in Resources */ = {isa = PBXBuildFile; fileRef = F731185313C84FEB00001E18 /* README */; };
+>>>>>>> 7362d10192745da2bbaf0e24ae096e55bfa0d339
 		F7720423137C21B7006D4EF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7720422137C21B7006D4EF1 /* UIKit.framework */; };
 		F7720425137C21B7006D4EF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7720424137C21B7006D4EF1 /* Foundation.framework */; };
 		F7720427137C21B7006D4EF1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7720426137C21B7006D4EF1 /* CoreGraphics.framework */; };
@@ -98,7 +103,12 @@
 		F718A57C13C776C600803C9D /* MZTabMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZTabMenuView.h; path = MZNavigationControllerModule/MZTabMenuView.h; sourceTree = SOURCE_ROOT; };
 		F718A57D13C776C600803C9D /* MZTabMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZTabMenuView.m; path = MZNavigationControllerModule/MZTabMenuView.m; sourceTree = SOURCE_ROOT; };
 		F718A58E13C7792B00803C9D /* MZNavigationController-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MZNavigationController-Info.plist"; path = "MZNavigationController/MZNavigationController-Info.plist"; sourceTree = SOURCE_ROOT; };
+<<<<<<< HEAD
 		F72F6D7E13F2C7DD00C16E74 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
+=======
+		F731185213C84FEB00001E18 /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT; sourceTree = SOURCE_ROOT; };
+		F731185313C84FEB00001E18 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
+>>>>>>> 7362d10192745da2bbaf0e24ae096e55bfa0d339
 		F772041E137C21B7006D4EF1 /* MZNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7720422137C21B7006D4EF1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F7720424137C21B7006D4EF1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -161,10 +171,21 @@
 			name = MZNavigationController;
 			sourceTree = "<group>";
 		};
+		F731185713C8500400001E18 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				F731185213C84FEB00001E18 /* COPYRIGHT */,
+				F731185313C84FEB00001E18 /* README */,
+			);
+			name = Others;
+			path = MZNavigationController;
+			sourceTree = "<group>";
+		};
 		F7720413137C21B7006D4EF1 = {
 			isa = PBXGroup;
 			children = (
 				F7720428137C21B7006D4EF1 /* MZNavigationController */,
+				F731185713C8500400001E18 /* Others */,
 				F7720448137C21B8006D4EF1 /* MZNavigationControllerTests */,
 				F7720421137C21B7006D4EF1 /* Frameworks */,
 				F772041F137C21B7006D4EF1 /* Products */,
@@ -341,7 +362,12 @@
 				F705F35213C77B6800CF0882 /* MZNavigationControllerTests-Info.plist in Resources */,
 				F705F36E13C77E4900CF0882 /* 2.png in Resources */,
 				F705F36F13C77E5400CF0882 /* 0.png in Resources */,
+<<<<<<< HEAD
 				F72F6D7F13F2C7DD00C16E74 /* README in Resources */,
+=======
+				F731185413C84FEC00001E18 /* COPYRIGHT in Resources */,
+				F731185513C84FEC00001E18 /* README in Resources */,
+>>>>>>> 7362d10192745da2bbaf0e24ae096e55bfa0d339
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

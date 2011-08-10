@@ -3,7 +3,7 @@
 //  MZNavigationController
 //
 //  Created by Keisuke Matsuo on 11/06/05.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Keisuke Matsuo. All rights reserved.
 //
 
 #import "TestWebViewController.h"
