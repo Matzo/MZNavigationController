@@ -12,8 +12,21 @@
     NSTimer *timer;
     CGPoint destinationPoint;
     
+    CGPoint lastAcceleration;
+    CGPoint acceleration;
+    NSArray *pageIndex;
+    
+    BOOL isCustomDecelerating;
 }
 @property (nonatomic, assign) CGPoint destinationPoint;
 @property (nonatomic, assign) CGPoint lastTouchPoint;
+@property (nonatomic, assign) CGPoint lastContentOffset;
+@property (nonatomic, assign) CGPoint lastAcceleration;
+@property (nonatomic, assign) CGPoint acceleration;
+@property (nonatomic, retain) NSArray *pageIndex;
+
+- (void)stopDecelerating;
+- (void)startDecelerating;
+- (void)scrollToPagingOffset;
 
 @end

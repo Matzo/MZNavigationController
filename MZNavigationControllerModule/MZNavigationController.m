@@ -298,54 +298,42 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView_ {
-//    lastOffset = scrollView_.contentOffset;
-//    NSLog(@"scroll start");
+    self.scrollView.pageIndex = self.pageOffsetIndexes;
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView_ {
     [self layoutRelationalViews];
     
+    
+    float ax = (self.scrollView.contentOffset.x - self.scrollView.lastContentOffset.x);
+    float ay = (self.scrollView.contentOffset.y - self.scrollView.lastContentOffset.y);
+    self.scrollView.lastAcceleration = CGPointMake(ax, ay);
+    self.scrollView.lastContentOffset = self.scrollView.contentOffset;
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView_ willDecelerate:(BOOL)decelerate {
     [self layoutRelationalViews];
-    
     [self scrollToPagingOffset];
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView_ {
+    self.scrollView.acceleration = self.scrollView.lastAcceleration;
+
     if (scrollView_.contentOffset.x < -100.0) {
         [self popToRootViewControllerAnimated:YES];
     } else {
         [self layoutRelationalViews];
     }
-//    [self scrollToPagingOffset];
+
+    [self scrollToPagingOffset];
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [self layoutRelationalViews];
-    
-    [self scrollToPagingOffset];
+//    [self layoutRelationalViews];
+//    [self scrollToPagingOffset];
 }
 
 - (void)scrollToPagingOffset {
-//    [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x,
-//                                                  self.scrollView.contentOffset.y)
-//                             animated:NO];
-
-    
-    NSArray *indexes = [self pageOffsetIndexes];
-    float targetStart = [[indexes objectAtIndex:0] floatValue];
-    float targetEnd;
-    float width;
-    for (NSNumber *x in indexes) {
-        targetEnd = [x floatValue];
-        width = targetEnd - targetStart;
-        if (targetStart <= self.scrollView.contentOffset.x + width*0.5
-            && self.scrollView.contentOffset.x + width*0.5 < targetEnd) {
-            
-            [self.scrollView setDestinationPoint:CGPointMake(targetStart, 0.0)];
-            break;
-        }
-        targetStart = targetEnd;
-    }
+    [self.scrollView stopDecelerating];
+    [self.scrollView startDecelerating];
+    return;
 }
 
 #pragma mark - Private Methods for navigation controller

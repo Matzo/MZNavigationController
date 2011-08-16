@@ -152,12 +152,12 @@
 		F720ED8613893147005E275B /* MZNavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				F718A56913C776B600803C9D /* MZNavigationBaseView.h */,
-				F718A56A13C776B600803C9D /* MZNavigationBaseView.m */,
 				F718A56B13C776B600803C9D /* MZNavigationController.h */,
 				F718A56C13C776B600803C9D /* MZNavigationController.m */,
 				F718A56D13C776B600803C9D /* MZNavigationScrollView.h */,
 				F718A56E13C776B600803C9D /* MZNavigationScrollView.m */,
+				F718A56913C776B600803C9D /* MZNavigationBaseView.h */,
+				F718A56A13C776B600803C9D /* MZNavigationBaseView.m */,
 				F718A56F13C776B600803C9D /* shadow.png */,
 			);
 			name = MZNavigationController;
