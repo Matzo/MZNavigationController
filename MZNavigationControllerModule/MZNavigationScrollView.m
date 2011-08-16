@@ -59,8 +59,8 @@
 - (void)scrollToDestination {
 //    NSLog(@"ax:%f ay:%f", acceleration.x, acceleration.y);
     if (isCustomDecelerating) {
-        float ax = self.acceleration.x*0.90;
-        float ay = self.acceleration.y*0.90;
+        float ax = self.acceleration.x*0.85;
+        float ay = self.acceleration.y*0.85;
         
         if (0.0 < fabs(ax) && fabs(ax) < 1.0) {
             ax = ax / fabs(ax);
@@ -70,15 +70,15 @@
         }
         acceleration = CGPointMake(ax, ay);
         
-        if (fabs(acceleration.x) <= 5.0 && fabs(acceleration.y) <= 5.0) {
+        if (fabs(acceleration.x) <= 8.0 && fabs(acceleration.y) <= 8.0) {
             [self scrollToPagingOffset];
         } else {
             CGPoint offset = self.contentOffset;
             if (offset.x < 0.0 || (self.contentSize.width - self.bounds.size.width) < offset.x) {
-                acceleration.x *= 0.6;
+                acceleration.x *= 0.7;
             }
             if (offset.y < 0.0 || (self.contentSize.height - self.bounds.size.height) < offset.y) {
-                acceleration.y *= 0.6;
+                acceleration.y *= 0.7;
             }
             
             offset.x = self.contentOffset.x + acceleration.x;
@@ -99,6 +99,14 @@
                 
                 float axMax = (destinationPoint.x - self.contentOffset.x)*0.15;
                 float ayMax = (destinationPoint.y - self.contentOffset.y)*0.15;
+                if (fabs(acceleration.x) < fabs(axMax)) {
+                    acceleration.x += (axMax - acceleration.x)*0.10;
+                    axMax = acceleration.x;
+                }
+                if (fabs(acceleration.y) < fabs(ayMax)) {
+                    acceleration.y += (ayMax - acceleration.y)*0.10;
+                    ayMax = acceleration.y;
+                }
                 
                 if (fabs(destinationPoint.x - self.contentOffset.x) < 1.0
                     && fabs(destinationPoint.y - self.contentOffset.y) < 1.0) {
