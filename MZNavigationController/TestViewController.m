@@ -13,6 +13,10 @@
 @interface TestViewController()
 - (UIViewController*)pushTestViewWithAnimated:(BOOL)animated title:(NSString*)title;
 - (UIViewController*)pushTestViewWithAnimated:(BOOL)animated width:(float)width title:(NSString*)title;
+- (UIViewController*)pushTestViewWithAnimated:(BOOL)animated
+                                        width:(float)width 
+                                        title:(NSString*)title
+                                  toolbarItem:(NSArray*)barItems;
 @end
 
 @implementation TestViewController
@@ -27,19 +31,23 @@
                  @"1:pushView",
                  @"2:popView animated",
                  @"3:popView",
-                 @"4:UINavigationBar",
-                 @"5:UIToolbar",
-                 @"6:UITabBar",
-                 @"7:popToRootView animated",
-                 @"8:popToRootView",
-                 @"9:hidesBottom = YES",
-                 @"10:hidesBottom = NO",
-                 @"11:pushView(wide) animated",
-                 @"12:pushView(wide)",
-                 @"13:resize",
-                 @"14:resize next page",
-                 @"15:web view",
-                 @"16:badge count up",
+                 @"4:pushWithToolbar",
+                 @"5:popToRootView animated",
+                 @"6:popToRootView",
+                 @"7:pushView(resize) animated",
+                 @"8:pushView(resize)",
+                 @"9:resize",
+                 @"10:web view",
+                 @"11:badge count up",
+                 @"  DUMMY  ",
+                 @"  DUMMY  ",
+                 @"  DUMMY  ",
+                 @"  DUMMY  ",
+                 @"  DUMMY  ",
+                 @"  DUMMY  ",
+                 @"  DUMMY  ",
+                 @"  DUMMY  ",
+                 @"  DUMMY  ",
                  nil];
         
         self.clearsSelectionOnViewWillAppear = NO;
@@ -219,56 +227,36 @@
             [self.navigationController popViewControllerAnimated:NO];
         } break;
         case 4: {
-//            [self.navigationItem setHidesBackButton:!self.navigationItem.hidesBackButton];
-            [self.navigationController setNavigationBarHidden:!self.navigationController.navigationBarHidden animated:YES];
+            UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(clickActionButton)];
+            NSArray *barItems = [NSArray arrayWithObjects:item1, nil];
+            [self pushTestViewWithAnimated:YES width:self.view.bounds.size.width title:title toolbarItem:barItems];
+
         } break;
         case 5: {
-            [self.navigationController setToolbarHidden:!self.navigationController.toolbarHidden animated:YES];
-            
-        } break;
-        case 6: {
-            [self setHidesBottomBarWhenPushed:!self.hidesBottomBarWhenPushed];
-
-            self.hidesBottomBarWhenPushed = YES;
-        } break;
-        case 7: {
             [self.navigationController popToRootViewControllerAnimated:YES];
         } break;
-        case 8: {
+        case 6: {
             [self.navigationController popToRootViewControllerAnimated:NO];
         } break;
+        case 7: {
+            float width = (self.view.bounds.size.width == 476.0) ? 320.0 : 476.0;
+            [self pushTestViewWithAnimated:YES width:width title:title];
+        } break;
+        case 8: {
+            float width = (self.view.bounds.size.width == 476.0) ? 320.0 : 476.0;
+            [self pushTestViewWithAnimated:NO width:width title:title];
+        } break;
         case 9: {
-            self.hidesBottomBarWhenPushed = YES;
-            [self pushTestViewWithAnimated:YES title:title];
-
-        } break;
-        case 10: {
-            self.hidesBottomBarWhenPushed = NO;
-            [self pushTestViewWithAnimated:YES title:title];
-        } break;
-        case 11: {
-            [self pushTestViewWithAnimated:YES width:476.0 title:title];
-        } break;
-        case 12: {
-            [self pushTestViewWithAnimated:NO width:476.0 title:title];
-        } break;
-        case 13: {
             float width = (self.view.bounds.size.width == 476.0) ? 320.0 : 476.0;
             MZNavigationController *navi = (MZNavigationController*)self.navigationController;
             [navi resizeViewController:self width:width];
         } break;
-        case 14: {
-            float width = (self.view.bounds.size.width == 476.0) ? 320.0 : 476.0;
-            MZNavigationController *navi = (MZNavigationController*)self.navigationController;
-            [navi setPageWidth:width];
-        } break;
-        case 15: {
-//            float width = (self.view.bounds.size.width == 476.0) ? 320.0 : 476.0;
+        case 10: {
             TestWebViewController *nextView = [[[TestWebViewController alloc] init] autorelease];
             nextView.title = title;
             [self.navigationController pushViewController:nextView animated:YES];
         } break;
-        case 16: {
+        case 11: {
             NSString *value = self.navigationController.tabBarItem.badgeValue;
             if (value) {
                 value = [NSString stringWithFormat:@"%d", [value intValue]+1];
@@ -284,6 +272,20 @@
     }
 }
 
+#pragma mark - Action Methods
+- (void)clickActionButton {
+    TestViewController *modalView = [[TestViewController alloc] initWithStyle:UITableViewStylePlain];
+    MZNavigationController *newNavi = [[MZNavigationController alloc] initWithRootViewController:modalView];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeModal)];
+    modalView.navigationItem.leftBarButtonItem = backButton;
+    
+    [self presentModalViewController:newNavi animated:YES];
+}
+- (void)closeModal {
+    [self dismissModalViewControllerAnimated:YES];
+}
+#pragma mark - Private Methods
 - (UIViewController*)pushTestViewWithAnimated:(BOOL)animated title:(NSString*)title {
     UITableViewStyle style = (self.tableView.style == UITableViewStyleGrouped) ? UITableViewStylePlain : UITableViewStyleGrouped;
     TestViewController *nextView = [[[TestViewController alloc] initWithStyle:style] autorelease];
@@ -301,4 +303,18 @@
     return nextView;
 }
 
+- (UIViewController*)pushTestViewWithAnimated:(BOOL)animated
+                                        width:(float)width 
+                                        title:(NSString*)title
+                                  toolbarItem:(NSArray*)barItems {
+
+    UITableViewStyle style = (self.tableView.style == UITableViewStyleGrouped)
+                           ? UITableViewStylePlain : UITableViewStyleGrouped;
+    TestViewController *nextView = [[[TestViewController alloc] initWithStyle:style] autorelease];
+    nextView.title = title;
+    [nextView setToolbarItems:barItems];
+    MZNavigationController *mzNavi = (MZNavigationController*)self.navigationController;
+    [mzNavi pushViewController:nextView width:width animated:animated];
+    return nextView;
+}
 @end

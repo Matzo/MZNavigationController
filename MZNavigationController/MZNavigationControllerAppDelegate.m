@@ -40,7 +40,7 @@
     tabCon.sideMenu.headerView = menuHeader;
     tabCon.sideMenu.footerView = menuFooter;
     
-    UIView *backgroundView = [[UIView alloc] initWithFrame:tabCon.view.bounds];
+    UIView *backgroundView = [[UIView alloc] initWithFrame:tabCon.view.frame];
     backgroundView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     tabCon.backgroundView = backgroundView;
     
