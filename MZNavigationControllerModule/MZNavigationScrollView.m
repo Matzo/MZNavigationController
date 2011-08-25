@@ -162,6 +162,29 @@
     CGPoint touchPoint = [touch locationInView:self];
     self.lastTouchPoint = touchPoint;
     
+    
+//    //==========
+//    if (pageIndex) {
+//        NSArray *indexes = [self pageIndex];
+//        float targetStart = [[indexes objectAtIndex:0] floatValue];
+//        float targetEnd;
+//        float width;
+//        for (NSNumber *x in indexes) {
+//            targetEnd = [x floatValue];
+//            width = targetEnd - targetStart;
+//            if (targetStart <= self.lastTouchPoint.x
+//                && self.lastTouchPoint.x < targetEnd) {
+//                if (targetStart < self.contentOffset.x) {
+//                    [self setDestinationPoint:CGPointMake(targetStart, 0.0)];
+//                } else if (self.contentOffset.x < targetEnd) {
+//                    [self setDestinationPoint:CGPointMake(targetEnd, 0.0)];
+//                }
+//            }
+//            targetStart = targetEnd;
+//        }
+//    }
+//    //==========
+    
     return YES;
 }
 #pragma mark - Private Methods
