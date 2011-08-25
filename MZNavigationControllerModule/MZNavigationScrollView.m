@@ -24,6 +24,8 @@
     if (self) {
         // Initialization code
         timer = [NSTimer scheduledTimerWithTimeInterval:1.0/60.0 target:self selector:@selector(scrollToDestination) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+        
         destinationPoint = CGPointZero;
         
         lastTouchPoint = CGPointZero;
