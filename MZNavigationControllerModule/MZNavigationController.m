@@ -167,6 +167,7 @@
     viewController.hidesBottomBarWhenPushed = YES;
     [super pushViewController:viewController animated:NO];
     [self setBaseViewForViewController:viewController];
+    self.scrollView.pageIndex = self.pageOffsetIndexes;
     //---------------
     
     MZNavigationBaseView *baseView = [self baseViewForViewController:viewController];
@@ -238,6 +239,7 @@
             //----------------
             popView = [super popViewControllerAnimated:NO];
             [[self baseViewForViewController:self.topViewController] setNeedsLayout];
+            self.scrollView.pageIndex = self.pageOffsetIndexes;
             //----------------
 
             if (!popView) break;
@@ -303,14 +305,13 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView_ {
     [self layoutRelationalViews];
     
-    
+
     float ax = (self.scrollView.contentOffset.x - self.scrollView.lastContentOffset.x);
     float ay = (self.scrollView.contentOffset.y - self.scrollView.lastContentOffset.y);
     self.scrollView.lastAcceleration = CGPointMake(ax, ay);
     self.scrollView.lastContentOffset = self.scrollView.contentOffset;
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView_ willDecelerate:(BOOL)decelerate {
-    [self layoutRelationalViews];
     [self scrollToPagingOffset];
 }
 
@@ -319,21 +320,16 @@
 
     if (scrollView_.contentOffset.x < -100.0) {
         [self popToRootViewControllerAnimated:YES];
-    } else {
-        [self layoutRelationalViews];
     }
 
     [self scrollToPagingOffset];
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-//    [self layoutRelationalViews];
-//    [self scrollToPagingOffset];
 }
 
 - (void)scrollToPagingOffset {
     [self.scrollView stopDecelerating];
     [self.scrollView startDecelerating];
-    return;
 }
 
 #pragma mark - Private Methods for navigation controller
@@ -341,26 +337,27 @@
     NSMutableSet *indexes = [NSMutableSet set];
     float x = 0.0;
     float menuIconWidth = 0.0;
-    [indexes addObject:[NSNumber numberWithInt:x]];
+    float scrollViewWidth = self.scrollView.bounds.size.width;
+    [indexes addObject:[NSNumber numberWithFloat:x]];
 
     if (self.sideMenu) {
         menuIconWidth = self.sideMenu.iconSize.width;
         x += self.sideMenu.bounds.size.width;
-        [indexes addObject:[NSNumber numberWithInt:self.sideMenu.bounds.size.width - menuIconWidth]];
     }
     
     for (UIViewController *viewController in self.viewControllers) {
+        [indexes addObject:[NSNumber numberWithFloat:x - menuIconWidth]];
+
         MZNavigationBaseView *baseView = [self baseViewForViewController:viewController];
-        float pageOffset = self.scrollView.bounds.size.width - baseView.bounds.size.width;
+        float pageOffset = scrollViewWidth - baseView.bounds.size.width;
         float rightSide = x - pageOffset;
 
-        if (0 < rightSide) [indexes addObject:[NSNumber numberWithInt:rightSide]];
-        
+        if (0 < rightSide) [indexes addObject:[NSNumber numberWithFloat:rightSide]];
         x += baseView.frame.size.width;
-        [indexes addObject:[NSNumber numberWithInt:x - menuIconWidth]];
     }
     NSArray *sortDescriptor = [NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"floatValue" ascending:YES], nil];
-    return [NSArray arrayWithArray:[indexes sortedArrayUsingDescriptors:sortDescriptor]];
+    NSArray *sortedIndex = [NSArray arrayWithArray:[indexes sortedArrayUsingDescriptors:sortDescriptor]];
+    return sortedIndex;
 }
 
 - (NSInteger)indexForViewController:(UIViewController*)viewController {
@@ -508,19 +505,15 @@
     }
     if (self.sideMenu) [self.scrollView sendSubviewToBack:self.sideMenu];
 
-    
-    if (contentsWidthSum <= self.scrollView.bounds.size.width) {
-        self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width + (self.sideMenu.bounds.size.width-menuIconSize)* 0.45,
-                                                 self.scrollView.contentSize.height);
+
+    float contentWidth;
+    float minWidth = self.scrollView.bounds.size.width + 1;
+    if (popingCount == 0 && pushingCount == 0) {
+        contentWidth = MAX(contentsWidthSum, minWidth);
     } else {
-        if (popingCount == 0 && pushingCount == 0) {
-            self.scrollView.contentSize = CGSizeMake(contentsWidthSum,
-                                                     self.scrollView.frame.size.height);
-        } else {
-            self.scrollView.contentSize = CGSizeMake(contentsWidthSum + pageWidth,
-                                                     self.scrollView.frame.size.height);
-        }
+        contentWidth = MAX(contentsWidthSum + pageWidth, minWidth);
     }
+    self.scrollView.contentSize = CGSizeMake(contentWidth, self.scrollView.frame.size.height);
 }
 
 - (void)scrollToViewRect:(CGRect)rect {
