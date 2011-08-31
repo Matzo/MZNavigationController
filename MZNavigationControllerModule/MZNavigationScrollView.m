@@ -214,22 +214,27 @@
     
     NSArray *indexes = [self pageIndex];
     float targetStart = [[indexes objectAtIndex:0] floatValue];
-    float targetEnd;
-    float width;
+    float targetEnd = targetStart;
+    BOOL findDestination = NO;
     for (NSNumber *x in indexes) {
         targetEnd = [x floatValue];
-        width = targetEnd - targetStart;
         if (targetStart <= self.contentOffset.x
             && self.contentOffset.x < targetEnd) {
             if (self.acceleration.x < 0.0) {
+                findDestination = YES;
                 [self setDestinationPoint:CGPointMake(targetStart, 0.0)];
                 break;
             } else {
+                findDestination = YES;
                 [self setDestinationPoint:CGPointMake(targetEnd, 0.0)];
                 break;
             }
         }
         targetStart = targetEnd;
+    }
+    
+    if (!findDestination) {
+        [self setDestinationPoint:CGPointMake(targetEnd, 0.0)];
     }
 }
 

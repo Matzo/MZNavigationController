@@ -83,10 +83,10 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0.0,
+    UIView *footer = [[[UIView alloc] initWithFrame:CGRectMake(0.0,
                                                               0.0,
                                                               self.view.bounds.size.width,
-                                                              1.0)];
+                                                              1.0)] autorelease];
     footer.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     footer.backgroundColor = [UIColor greenColor];
     self.tableView.tableFooterView = footer;
@@ -227,7 +227,7 @@
             [self.navigationController popViewControllerAnimated:NO];
         } break;
         case 4: {
-            UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(clickActionButton)];
+            UIBarButtonItem *item1 = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(clickActionButton)] autorelease];
             NSArray *barItems = [NSArray arrayWithObjects:item1, nil];
             [self pushTestViewWithAnimated:YES width:self.view.bounds.size.width title:title toolbarItem:barItems];
 
@@ -274,10 +274,10 @@
 
 #pragma mark - Action Methods
 - (void)clickActionButton {
-    TestViewController *modalView = [[TestViewController alloc] initWithStyle:UITableViewStylePlain];
-    MZNavigationController *newNavi = [[MZNavigationController alloc] initWithRootViewController:modalView];
+    TestViewController *modalView = [[[TestViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+    MZNavigationController *newNavi = [[[MZNavigationController alloc] initWithRootViewController:modalView] autorelease];
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeModal)];
+    UIBarButtonItem *backButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeModal)] autorelease];
     modalView.navigationItem.leftBarButtonItem = backButton;
     
     [self presentModalViewController:newNavi animated:YES];

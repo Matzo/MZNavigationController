@@ -77,9 +77,9 @@
                                                     target:self
                                                     action:@selector(historyForward)] autorelease];
     forward.enabled = NO;
-    self.stop = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopLoading)];
+    self.stop = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopLoading)] autorelease];
     stop.enabled = NO;
-    self.reload = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadPage)];
+    self.reload = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadPage)] autorelease];
     reload.enabled = NO;
 
     [self setToolbarItems:[NSArray arrayWithObjects:back,forward,stop,reload, nil]];

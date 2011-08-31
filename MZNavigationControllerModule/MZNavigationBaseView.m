@@ -50,7 +50,7 @@
         [self addSubview:rightShadow];
 
         
-        self.frontShadow = [[UIView alloc] initWithFrame:self.bounds];
+        self.frontShadow = [[[UIView alloc] initWithFrame:self.bounds] autorelease];
         frontShadow.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         frontShadow.backgroundColor = [UIColor colorWithWhite:0.0 alpha:1.0];
         frontShadow.alpha = 0.0;
@@ -125,8 +125,8 @@
 
 - (void)setMainView:(UIView *)mainView_ {
     if (self.mainView != mainView_) {
-        [self.mainView removeFromSuperview];
-        [self.mainView autorelease];
+        [mainView removeFromSuperview];
+        [mainView autorelease];
         mainView = [mainView_ retain];
     }
     

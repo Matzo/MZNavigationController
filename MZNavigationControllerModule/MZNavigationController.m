@@ -476,7 +476,8 @@
                                     baseView.baseWidth,
                                     self.scrollView.frame.size.height);
 
-        if (baseView.frame.origin.x + baseView.baseWidth <= self.scrollView.contentOffset.x + menuIconSize) {
+        if (baseView.frame.origin.x + baseView.baseWidth <= self.scrollView.contentOffset.x + menuIconSize
+                && i != lastBaseViewIndex) {
             baseView.hidden = YES;
         } else {
             baseView.hidden = NO;
