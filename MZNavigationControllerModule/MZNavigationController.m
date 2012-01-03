@@ -301,6 +301,8 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView_ {
     self.scrollView.pageIndex = self.pageOffsetIndexes;
+    
+    [self.scrollView stopDecelerating];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView_ {
     [self layoutRelationalViews];

@@ -161,8 +161,10 @@
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInView:self];
     self.lastTouchPoint = touchPoint;
-    
-    
+    self.acceleration = CGPointZero;
+    self.lastAcceleration = CGPointZero;
+
+
 //    //==========
 //    if (pageIndex) {
 //        NSArray *indexes = [self pageIndex];
@@ -200,6 +202,8 @@
     [self setContentOffset:CGPointMake(self.contentOffset.x,
                                        self.contentOffset.y)
                   animated:NO];
+    destinationPoint = CGPointMake(-1, -1);
+
     isCustomDecelerating = NO;
 }
 - (void)startDecelerating {

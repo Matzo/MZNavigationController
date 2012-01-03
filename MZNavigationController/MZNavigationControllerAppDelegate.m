@@ -51,25 +51,30 @@
     float fullWidth = [[UIScreen mainScreen] applicationFrame].size.width - tabCon.sideMenu.iconSize.width;
 
     NSMutableArray *viewControllerList = [NSMutableArray array];
-    for (int i = 0; i < 7; i++) {
-        UITableViewStyle style = (i%2 == 0) ? UITableViewStylePlain : UITableViewStyleGrouped;
-        TestViewController *topView = [[[TestViewController alloc] initWithStyle:style] autorelease];
+    for (int i = 0; i < 3; i++) {
+        TestViewController *topView = [[[TestViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
         MZNavigationController *mzNavi;
         
-        if (5 < i) {
-            mzNavi = [[[MZNavigationController alloc] initWithRootViewController:topView
-                                                                           width:fullWidth]
-                      autorelease];
-        } else if (2 < i) {
-            mzNavi = [[[MZNavigationController alloc] initWithRootViewController:topView]
-                      autorelease];
-        } else {
-            mzNavi = [[[MZNavigationController alloc] initWithRootViewController:topView
-                                                                           width:iPhoneWidth]
-                      autorelease];
+        switch (i) {
+            case 0:
+                mzNavi = [[[MZNavigationController alloc] initWithRootViewController:topView]
+                          autorelease];
+                break;
+            case 1:
+                mzNavi = [[[MZNavigationController alloc] initWithRootViewController:topView
+                                                                               width:iPhoneWidth]
+                          autorelease];
+                break;
+            case 2:
+                mzNavi = [[[MZNavigationController alloc] initWithRootViewController:topView
+                                                                               width:fullWidth]
+                          autorelease];
+                break;
+            default:
+                break;
         }
         
-        NSString *title = [NSString stringWithFormat:@"menu %d", i+1];
+        NSString *title = [NSString stringWithFormat:@"menu %d", i];
         UIImage *icon = [UIImage imageNamed:[NSString stringWithFormat:@"%d",i]];
         mzNavi.tabBarItem = [[[UITabBarItem alloc] initWithTitle:title
                                                            image:icon
