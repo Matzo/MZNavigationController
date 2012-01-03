@@ -23,7 +23,7 @@ And usage is similar to UINavigationController and UITabBarController.
     UIViewController *second = [[[UIViewController alloc] init] autorelease];
     MZNavigationController *secondNavi = [[[MZNavigationController alloc] initWithRootViewController:second] autorelease];
     
-    NSArray *viewControllers = [NSArray arrayWithObjects:first, secont, nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:first, second, nil];
     [tabController setViewControllers:viewControllers animated:NO];
 
 
