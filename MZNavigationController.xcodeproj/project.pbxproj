@@ -44,6 +44,7 @@
 		F7AC0C4413F73D3600AFB27C /* COPYRIGHT in Resources */ = {isa = PBXBuildFile; fileRef = F7AC0C4213F73D3600AFB27C /* COPYRIGHT */; };
 		F7AC0C4513F73D3600AFB27C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7AC0C4313F73D3600AFB27C /* README.md */; };
 		F7AC0C4C13F756ED00AFB27C /* TestWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A55313C775D700803C9D /* TestWebViewController.m */; };
+		F7E0322F14B2F6120044788B /* MZTouchHandlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E0322E14B2F6120044788B /* MZTouchHandlerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		F7720442137C21B8006D4EF1 /* MZNavigationControllerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MZNavigationControllerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7AC0C4213F73D3600AFB27C /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT; sourceTree = SOURCE_ROOT; };
 		F7AC0C4313F73D3600AFB27C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		F7E0322D14B2F6120044788B /* MZTouchHandlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZTouchHandlerView.h; path = MZNavigationControllerModule/MZTouchHandlerView.h; sourceTree = SOURCE_ROOT; };
+		F7E0322E14B2F6120044788B /* MZTouchHandlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZTouchHandlerView.m; path = MZNavigationControllerModule/MZTouchHandlerView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 				F718A56913C776B600803C9D /* MZNavigationBaseView.h */,
 				F718A56A13C776B600803C9D /* MZNavigationBaseView.m */,
 				F718A56F13C776B600803C9D /* shadow.png */,
+				F7E0322D14B2F6120044788B /* MZTouchHandlerView.h */,
+				F7E0322E14B2F6120044788B /* MZTouchHandlerView.m */,
 			);
 			name = MZNavigationController;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				F718A58313C776C600803C9D /* MZTabMenuView.m in Sources */,
 				F705EEC513C77AF600CF0882 /* TestViewController.m in Sources */,
 				F7AC0C4C13F756ED00AFB27C /* TestWebViewController.m in Sources */,
+				F7E0322F14B2F6120044788B /* MZTouchHandlerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +449,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: keisuke matsuo (6496U2E57C)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -452,7 +459,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "57012E29-2D53-4B2D-A893-94C4870D6271";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -462,14 +469,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: keisuke matsuo (6496U2E57C)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "57012E29-2D53-4B2D-A893-94C4870D6271";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
