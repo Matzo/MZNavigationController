@@ -51,12 +51,6 @@
 }
 */
 
-- (void)dealloc
-{
-//    [sideMenu release];
-    [pageIndex release];
-    [super dealloc];
-}
 
 - (void)scrollToDestination {
 //    NSLog(@"ax:%f ay:%f", acceleration.x, acceleration.y);

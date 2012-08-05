@@ -15,9 +15,9 @@
     UITableView *tableView;
     UIView *shadow;
 }
-@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, assign) CGSize iconSize;
-@property (nonatomic, retain) UIView *headerView;
-@property (nonatomic, retain) UIView *footerView;
+@property (nonatomic, strong) UIView *headerView;
+@property (nonatomic, strong) UIView *footerView;
 
 @end

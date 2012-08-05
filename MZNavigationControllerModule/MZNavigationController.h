@@ -30,8 +30,8 @@ enum STATUS {
     BOOL isChangingByTab;
 }
 
-@property (nonatomic, retain) MZNavigationScrollView *scrollView;
-@property (nonatomic, retain) MZTabMenuView *sideMenu;
+@property (nonatomic, strong) MZNavigationScrollView *scrollView;
+@property (nonatomic, strong) MZTabMenuView *sideMenu;
 @property (nonatomic, assign) CGPoint lastTouchPoint;
 @property (nonatomic, assign) CGPoint acceleration;
 @property (nonatomic, assign) BOOL isChangingByTab;

@@ -53,18 +53,10 @@
 //    NSLog(@"kokoha?:%@", badgeValue);
 //}
 
-- (void)dealloc
-{
-    [badgeValue release];
-    [badgeImage release];
-    [badgeLabel release];
-    [super dealloc];
-}
 
 - (void)setBadgeValue:(NSString *)badgeValue_ {
     if (![badgeValue isEqualToString:badgeValue_]) {
-        [badgeValue release];
-        badgeValue = [badgeValue_ retain];
+        badgeValue = badgeValue_;
     }
     
     if (badgeValue != nil && ![badgeValue isEqualToString:@""]) {

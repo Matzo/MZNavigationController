@@ -27,12 +27,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [sideMenu release];
-    [backgroundView release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -67,7 +61,7 @@
                                   0.0,
                                   292.0,
                                   self.view.frame.size.height);
-    self.sideMenu = [[[MZTabMenuView alloc] initWithFrame:menuFrame] autorelease];
+    self.sideMenu = [[MZTabMenuView alloc] initWithFrame:menuFrame];
     self.sideMenu.tableView.delegate = self;
     self.sideMenu.tableView.dataSource = self;
     self.sideMenu.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
@@ -169,7 +163,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[[MZTabMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[MZTabMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
     UIViewController *viewController = [self.viewControllers objectAtIndex:indexPath.row];
@@ -214,8 +208,7 @@
 - (void)setBackgroundView:(UIView *)backgroundView_ {
     if (backgroundView != backgroundView_) {
         [backgroundView removeFromSuperview];
-        [backgroundView release];
-        backgroundView = [backgroundView_ retain];
+        backgroundView = backgroundView_;
     }
     [self.view addSubview:backgroundView];
 }

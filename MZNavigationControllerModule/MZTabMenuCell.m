@@ -48,17 +48,10 @@
     }
 }
 
-- (void)dealloc
-{
-    [tabBarItem release];
-    [badge release];
-    [super dealloc];
-}
 
 - (void)setTabBarItem:(UITabBarItem *)tabBarItem_ {
     if (tabBarItem != tabBarItem_) {
-        [tabBarItem release];
-        tabBarItem = [tabBarItem_ retain];
+        tabBarItem = tabBarItem_;
     }
     self.textLabel.text = tabBarItem.title;
     self.imageView.image = tabBarItem.image;

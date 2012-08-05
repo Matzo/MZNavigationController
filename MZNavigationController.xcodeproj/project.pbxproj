@@ -303,6 +303,9 @@
 /* Begin PBXProject section */
 		F7720415137C21B7006D4EF1 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
 			buildConfigurationList = F7720418137C21B7006D4EF1 /* Build configuration list for PBXProject "MZNavigationController" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -481,10 +484,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MZNavigationController/MZNavigationController-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "MZNavigationController/MZNavigationController-Info.plist";
 				PRODUCT_NAME = MZNavigationController;
 				WRAPPER_EXTENSION = app;
@@ -495,9 +500,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MZNavigationController/MZNavigationController-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "MZNavigationController/MZNavigationController-Info.plist";
 				PRODUCT_NAME = MZNavigationController;
 				VALIDATE_PRODUCT = YES;
@@ -517,6 +524,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MZNavigationControllerTests/MZNavigationControllerTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "MZNavigationControllerTests/MZNavigationControllerTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -540,6 +548,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MZNavigationControllerTests/MZNavigationControllerTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "MZNavigationControllerTests/MZNavigationControllerTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",

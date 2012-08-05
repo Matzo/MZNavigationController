@@ -19,8 +19,8 @@ enum {
     MZTabMenuView *sideMenu;
     UIView *backgroundView;
 }
-@property (nonatomic, retain) MZTabMenuView *sideMenu;
-@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, strong) MZTabMenuView *sideMenu;
+@property (nonatomic, strong) UIView *backgroundView;
 - (void)setLayout:(int)layoutType;
 
 @end

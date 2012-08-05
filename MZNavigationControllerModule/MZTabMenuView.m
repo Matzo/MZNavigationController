@@ -19,9 +19,8 @@
     if (self) {
         self.clipsToBounds = NO;
 
-        self.tableView = [[[UITableView alloc] initWithFrame:frame
-                                                       style:UITableViewStylePlain]
-                          autorelease];
+        self.tableView = [[UITableView alloc] initWithFrame:frame
+                                                       style:UITableViewStylePlain];
 
         self.tableView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
         self.tableView.exclusiveTouch = NO;
@@ -44,13 +43,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [tableView release];
-    [headerView release];
-    [footerView release];
-    [shadow release];
-    [super dealloc];
-}
 
 - (void)layoutSubviews {
     CGRect headerFrame = CGRectZero;
@@ -85,8 +77,7 @@
 - (void)setHeaderView:(UIView *)headerView_ {
     if (headerView != headerView_) {
         [headerView removeFromSuperview];
-        [headerView release];
-        headerView = [headerView_ retain];
+        headerView = headerView_;
     }
     [self addSubview:headerView];
     [self setNeedsLayout];
@@ -94,8 +85,7 @@
 - (void)setFooterView:(UIView *)footerView_ {
     if (footerView != footerView_) {
         [footerView removeFromSuperview];
-        [footerView release];
-        footerView = [footerView_ retain];
+        footerView = footerView_;
     }
     [self addSubview:footerView];
     [self setNeedsLayout];

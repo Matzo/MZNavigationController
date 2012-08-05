@@ -14,6 +14,6 @@
     
     MZBadgeView *badge;
 }
-@property (nonatomic, retain) UITabBarItem *tabBarItem;
+@property (nonatomic, strong) UITabBarItem *tabBarItem;
 
 @end

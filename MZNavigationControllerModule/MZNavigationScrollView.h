@@ -23,7 +23,7 @@
 @property (nonatomic, assign) CGPoint lastContentOffset;
 @property (nonatomic, assign) CGPoint lastAcceleration;
 @property (nonatomic, assign) CGPoint acceleration;
-@property (nonatomic, retain) NSArray *pageIndex;
+@property (nonatomic, strong) NSArray *pageIndex;
 
 - (void)stopDecelerating;
 - (void)startDecelerating;

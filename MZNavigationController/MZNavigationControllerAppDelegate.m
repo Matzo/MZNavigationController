@@ -52,23 +52,20 @@
 
     NSMutableArray *viewControllerList = [NSMutableArray array];
     for (int i = 0; i < 3; i++) {
-        TestViewController *topView = [[[TestViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        TestViewController *topView = [[TestViewController alloc] initWithStyle:UITableViewStylePlain];
         MZNavigationController *mzNavi;
         
         switch (i) {
             case 0:
-                mzNavi = [[[MZNavigationController alloc] initWithRootViewController:topView]
-                          autorelease];
+                mzNavi = [[MZNavigationController alloc] initWithRootViewController:topView];
                 break;
             case 1:
-                mzNavi = [[[MZNavigationController alloc] initWithRootViewController:topView
-                                                                               width:iPhoneWidth]
-                          autorelease];
+                mzNavi = [[MZNavigationController alloc] initWithRootViewController:topView
+                                                                               width:iPhoneWidth];
                 break;
             case 2:
-                mzNavi = [[[MZNavigationController alloc] initWithRootViewController:topView
-                                                                               width:fullWidth]
-                          autorelease];
+                mzNavi = [[MZNavigationController alloc] initWithRootViewController:topView
+                                                                               width:fullWidth];
                 break;
             default:
                 break;
@@ -76,9 +73,9 @@
         
         NSString *title = [NSString stringWithFormat:@"menu %d", i];
         UIImage *icon = [UIImage imageNamed:[NSString stringWithFormat:@"%d",i]];
-        mzNavi.tabBarItem = [[[UITabBarItem alloc] initWithTitle:title
+        mzNavi.tabBarItem = [[UITabBarItem alloc] initWithTitle:title
                                                            image:icon
-                                                             tag:i] autorelease];
+                                                             tag:i];
         topView.title = title;
         
         [viewControllerList addObject:mzNavi];
@@ -130,11 +127,5 @@
      */
 }
 
-- (void)dealloc
-{
-    [_window release];
-//    [_viewController release];
-    [super dealloc];
-}
 
 @end

@@ -28,15 +28,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [webView release];
-    [back release];
-    [forward release];
-    [stop release];
-    [reload release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -60,26 +51,26 @@
 {
     [super viewDidLoad];
     
-    self.webView = [[[UIWebView alloc] initWithFrame:self.view.bounds] autorelease];
+    self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     webView.delegate = self;
     webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     webView.scalesPageToFit = YES;
     [self.view addSubview:webView];
 
     [self.navigationController setToolbarHidden:NO];
-    self.back = [[[UIBarButtonItem alloc] initWithTitle:@"<"
+    self.back = [[UIBarButtonItem alloc] initWithTitle:@"<"
                                                   style:UIBarButtonItemStylePlain
                                                  target:self
-                                                 action:@selector(historyBack)] autorelease];
+                                                 action:@selector(historyBack)];
     back.enabled = NO;
-    self.forward = [[[UIBarButtonItem alloc] initWithTitle:@">"
+    self.forward = [[UIBarButtonItem alloc] initWithTitle:@">"
                                                      style:UIBarButtonItemStylePlain
                                                     target:self
-                                                    action:@selector(historyForward)] autorelease];
+                                                    action:@selector(historyForward)];
     forward.enabled = NO;
-    self.stop = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopLoading)] autorelease];
+    self.stop = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopLoading)];
     stop.enabled = NO;
-    self.reload = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadPage)] autorelease];
+    self.reload = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadPage)];
     reload.enabled = NO;
 
     [self setToolbarItems:[NSArray arrayWithObjects:back,forward,stop,reload, nil]];

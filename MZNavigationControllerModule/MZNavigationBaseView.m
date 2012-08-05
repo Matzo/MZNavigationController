@@ -28,14 +28,14 @@
                                         0.0,
                                         self.frame.size.width,
                                         44.0);
-        self.navigationBar = [[[UINavigationBar alloc] initWithFrame:navBarFrame] autorelease];
+        self.navigationBar = [[UINavigationBar alloc] initWithFrame:navBarFrame];
         [self addSubview:navigationBar];
         
         CGRect barFrame = CGRectMake(0.0,
                                      frame.size.height,
                                      frame.size.width,
                                      44.0);
-        self.toolbar = [[[UIToolbar alloc] initWithFrame:barFrame] autorelease];
+        self.toolbar = [[UIToolbar alloc] initWithFrame:barFrame];
         self.toolbar.hidden = YES;
         
         [self addSubview:self.toolbar];
@@ -50,7 +50,7 @@
         [self addSubview:rightShadow];
 
         
-        self.frontShadow = [[[UIView alloc] initWithFrame:self.bounds] autorelease];
+        self.frontShadow = [[UIView alloc] initWithFrame:self.bounds];
         frontShadow.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         frontShadow.backgroundColor = [UIColor colorWithWhite:0.0 alpha:1.0];
         frontShadow.alpha = 0.0;
@@ -107,16 +107,6 @@
     [self bringSubviewToFront:frontShadow];
 }
 
-- (void)dealloc
-{
-    [frontShadow release];
-    [navigationBar release];
-    [toolbar release];
-    [leftShadow release];
-    [rightShadow release];
-    [mainView release];
-    [super dealloc];
-}
 
 - (void)setBaseWidth:(float)baseWidth_ {
     baseWidth = baseWidth_;
@@ -126,8 +116,7 @@
 - (void)setMainView:(UIView *)mainView_ {
     if (self.mainView != mainView_) {
         [mainView removeFromSuperview];
-        [mainView autorelease];
-        mainView = [mainView_ retain];
+        mainView = mainView_;
     }
     
     [self addSubview:self.mainView];

@@ -47,13 +47,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [baseViews release];
-    [scrollView release];
-    [sideMenu release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -82,7 +75,7 @@
         pageWidth = 476.0;
     }
 
-    self.scrollView = [[[MZNavigationScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds] autorelease];
+    self.scrollView = [[MZNavigationScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     isChangingByTab = NO;
     
@@ -402,7 +395,7 @@
         CGRect f = baseView.frame;
         if (f.origin.x <= p.x && p.x < f.origin.x + f.size.width
             && f.origin.y <= p.y && p.y < f.origin.y + f.size.height) {
-            focusViewController = [[viewConroller retain] autorelease];
+            focusViewController = viewConroller;
         }
     }
     
@@ -420,7 +413,7 @@
                                           pageWidth,
                                           self.scrollView.bounds.size.height);        
         
-        baseView = [[[MZNavigationBaseView alloc] initWithFrame:baseViewFrame] autorelease];
+        baseView = [[MZNavigationBaseView alloc] initWithFrame:baseViewFrame];
         [baseViews addObject:baseView];
 
         // navigation bar

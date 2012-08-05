@@ -55,11 +55,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [items release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -83,10 +78,10 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    UIView *footer = [[[UIView alloc] initWithFrame:CGRectMake(0.0,
+    UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0.0,
                                                               0.0,
                                                               self.view.bounds.size.width,
-                                                              1.0)] autorelease];
+                                                              1.0)];
     footer.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     footer.backgroundColor = [UIColor greenColor];
     self.tableView.tableFooterView = footer;
@@ -149,7 +144,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
@@ -227,7 +222,7 @@
             [self.navigationController popViewControllerAnimated:NO];
         } break;
         case 4: {
-            UIBarButtonItem *item1 = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(clickActionButton)] autorelease];
+            UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(clickActionButton)];
             NSArray *barItems = [NSArray arrayWithObjects:item1, nil];
             [self pushTestViewWithAnimated:YES width:self.view.bounds.size.width title:title toolbarItem:barItems];
 
@@ -252,7 +247,7 @@
             [navi resizeViewController:self width:width];
         } break;
         case 10: {
-            TestWebViewController *nextView = [[[TestWebViewController alloc] init] autorelease];
+            TestWebViewController *nextView = [[TestWebViewController alloc] init];
             nextView.title = title;
             [self.navigationController pushViewController:nextView animated:YES];
         } break;
@@ -274,10 +269,10 @@
 
 #pragma mark - Action Methods
 - (void)clickActionButton {
-    TestViewController *modalView = [[[TestViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
-    MZNavigationController *newNavi = [[[MZNavigationController alloc] initWithRootViewController:modalView] autorelease];
+    TestViewController *modalView = [[TestViewController alloc] initWithStyle:UITableViewStylePlain];
+    MZNavigationController *newNavi = [[MZNavigationController alloc] initWithRootViewController:modalView];
     
-    UIBarButtonItem *backButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeModal)] autorelease];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeModal)];
     modalView.navigationItem.leftBarButtonItem = backButton;
     
     [self presentModalViewController:newNavi animated:YES];
@@ -288,7 +283,7 @@
 #pragma mark - Private Methods
 - (UIViewController*)pushTestViewWithAnimated:(BOOL)animated title:(NSString*)title {
     UITableViewStyle style = (self.tableView.style == UITableViewStyleGrouped) ? UITableViewStylePlain : UITableViewStyleGrouped;
-    TestViewController *nextView = [[[TestViewController alloc] initWithStyle:style] autorelease];
+    TestViewController *nextView = [[TestViewController alloc] initWithStyle:style];
     nextView.title = title;
     [self.navigationController pushViewController:nextView animated:animated];
     return nextView;
@@ -296,7 +291,7 @@
 
 - (UIViewController*)pushTestViewWithAnimated:(BOOL)animated width:(float)width title:(NSString*)title {
     UITableViewStyle style = (self.tableView.style == UITableViewStyleGrouped) ? UITableViewStylePlain : UITableViewStyleGrouped;
-    TestViewController *nextView = [[[TestViewController alloc] initWithStyle:style] autorelease];
+    TestViewController *nextView = [[TestViewController alloc] initWithStyle:style];
     nextView.title = title;
     MZNavigationController *mzNavi = (MZNavigationController*)self.navigationController;
     [mzNavi pushViewController:nextView width:width animated:animated];
@@ -310,7 +305,7 @@
 
     UITableViewStyle style = (self.tableView.style == UITableViewStyleGrouped)
                            ? UITableViewStylePlain : UITableViewStyleGrouped;
-    TestViewController *nextView = [[[TestViewController alloc] initWithStyle:style] autorelease];
+    TestViewController *nextView = [[TestViewController alloc] initWithStyle:style];
     nextView.title = title;
     [nextView setToolbarItems:barItems];
     MZNavigationController *mzNavi = (MZNavigationController*)self.navigationController;

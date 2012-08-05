@@ -18,9 +18,9 @@
     UIView *frontShadow;
 }
 @property (nonatomic, assign) float baseWidth;
-@property (nonatomic, retain) UINavigationBar *navigationBar;
-@property (nonatomic, retain) UIToolbar *toolbar;
-@property (nonatomic, retain) UIView *mainView;
-@property (nonatomic, retain) UIView *frontShadow;
+@property (nonatomic, strong) UINavigationBar *navigationBar;
+@property (nonatomic, strong) UIToolbar *toolbar;
+@property (nonatomic, strong) UIView *mainView;
+@property (nonatomic, strong) UIView *frontShadow;
 
 @end
