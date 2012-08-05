@@ -66,7 +66,7 @@
     self.sideMenu.tableView.dataSource = self;
     self.sideMenu.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
 
-    [self.view addSubview:sideMenu];
+    [self.view addSubview:self.sideMenu];
 }
 
 - (void)viewDidUnload
@@ -74,6 +74,8 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    
+    self.sideMenu = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -97,6 +99,8 @@
     [super setViewControllers:viewControllers animated:NO];
     
     [self setLayout:MZTabBarControllerLayoutLeftNavi];
+    
+    [self.sideMenu.tableView reloadData];
 }
 - (void)setSelectedViewController:(UIViewController *)selectedViewController {
     UIViewController *previousViewController = self.selectedViewController;
@@ -172,6 +176,10 @@
     
     return cell;
 }
+
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.viewControllers count];
 }

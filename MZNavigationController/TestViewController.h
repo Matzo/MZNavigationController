@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface TestViewController : UITableViewController {
-    NSMutableArray *items;
-}
+@interface TestViewController : UITableViewController
+
+@property (nonatomic, strong) NSMutableArray *items;
 
 @end

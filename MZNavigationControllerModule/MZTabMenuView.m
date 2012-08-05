@@ -26,7 +26,7 @@
         self.tableView.exclusiveTouch = NO;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.tableView.rowHeight = 48.0;
-        [self addSubview:tableView];
+        [self addSubview:self.tableView];
 
         self.iconSize = CGSizeMake(72.0, 72.0);
         

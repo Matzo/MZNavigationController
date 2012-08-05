@@ -20,35 +20,36 @@
 @end
 
 @implementation TestViewController
+@synthesize items;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        items = [[NSMutableArray alloc] initWithObjects:
-                 @"0:pushView animated",
-                 @"1:pushView",
-                 @"2:popView animated",
-                 @"3:popView",
-                 @"4:pushWithToolbar",
-                 @"5:popToRootView animated",
-                 @"6:popToRootView",
-                 @"7:pushView(resize) animated",
-                 @"8:pushView(resize)",
-                 @"9:resize",
-                 @"10:web view",
-                 @"11:badge count up",
-                 @"  DUMMY  ",
-                 @"  DUMMY  ",
-                 @"  DUMMY  ",
-                 @"  DUMMY  ",
-                 @"  DUMMY  ",
-                 @"  DUMMY  ",
-                 @"  DUMMY  ",
-                 @"  DUMMY  ",
-                 @"  DUMMY  ",
-                 nil];
+        self.items = [[NSMutableArray alloc] initWithObjects:
+                      @"0:pushView animated",
+                      @"1:pushView",
+                      @"2:popView animated",
+                      @"3:popView",
+                      @"4:pushWithToolbar",
+                      @"5:popToRootView animated",
+                      @"6:popToRootView",
+                      @"7:pushView(resize) animated",
+                      @"8:pushView(resize)",
+                      @"9:resize",
+                      @"10:web view",
+                      @"11:badge count up",
+                      @"  DUMMY  ",
+                      @"  DUMMY  ",
+                      @"  DUMMY  ",
+                      @"  DUMMY  ",
+                      @"  DUMMY  ",
+                      @"  DUMMY  ",
+                      @"  DUMMY  ",
+                      @"  DUMMY  ",
+                      @"  DUMMY  ",
+                      nil];
         
         self.clearsSelectionOnViewWillAppear = NO;
     }
